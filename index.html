@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Azure Chatbot</title>
+</head>
+<body>
+  <h2>Ask the Bot:</h2>
+  <input id="question" type="text" placeholder="Type a question..." />
+  <button onclick="askBot()">Send</button>
+  <div id="response"></div>
+
+  <script>
+    async function askBot() {
+      const question = document.getElementById("question").value;
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: question })
+      });
+      const data = await res.json();
+      document.getElementById("response").innerText = data.reply;
+    }
+  </script>
+</body>
+</html>

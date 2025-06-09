@@ -8,7 +8,7 @@ import requests
 def query_azure_search(query_text):
     search_endpoint = os.environ["https://cogman.search.windows.net"]  # e.g., https://<your-search-service>.search.windows.net
     index_name = os.environ["vector-1749398608728"]
-    search_key = os.environ["N7bdXapPHuf36NE1ZRyIKPbkCtogvKoNKtgHpqL4RNAzSeASTYRy"]
+    search_key = os.environ["LNUBkeLdCqmygIwqrcEoHbhyypewIblwNGP1r1j9npAzSeChsmoh"]
 
     url = f"{search_endpoint}/indexes/{index_name}/docs/search?api-version=2023-07-01-Preview"
     headers = {
